@@ -1,31 +1,39 @@
 # Procurement Management System
 
-Java desktop procurement management system for handling requisitions, purchase orders, suppliers, inventory, and sales-related workflows. The project appears to be structured as a multi-role academic system with separate dashboards for administrators and operational staff.
+## Overview
+
+Procurement Management System is a Java desktop application for handling requisitions, purchase orders, supplier records, stock views, payments, and sales activity. The codebase is organized around separate role-based screens for administrators, finance managers, inventory managers, purchase managers, and sales managers.
 
 ## Features
 
-- Purchase requisition and purchase order workflows
-- Supplier and inventory management
-- Sales tracking and stock monitoring
-- Role-based modules for admin, finance, inventory, purchase, and sales users
-- Text-file-backed records plus Java form-based desktop UI
+- Login-driven desktop workflow starting from `Assignment.java`
+- Purchase requisition and purchase order management
+- Supplier and item maintenance
+- Stock viewing and payment tracking
+- Sales entry, sales history, and dashboard-style reporting screens
+- Text-file-backed records for users, suppliers, items, orders, and sales
 
 ## Tech Stack
 
 - Java
-- NetBeans form-based desktop UI (`.form`)
+- Swing / NetBeans form files (`.java` and `.form`)
 - Ant build (`build.xml`)
-- File-based records (`*.txt`)
+- Flat-file persistence
 
 ## Project Structure
 
-- `src/main/` - application source, domain classes, and role-specific screens
-- `build.xml` - Ant build configuration
-- `users.txt`, `items.txt`, `POs.txt`, `PRs.txt`, `SPs.txt`, `sales.txt`, `suppliers.txt` - stored records
-- `src/Icon/` - UI assets
+- `src/main/Assignment.java` - application entry point and initial login launch
+- `src/main/Login.java` - login screen
+- `src/main/Admin_*` - administrator screens
+- `src/main/FM_*` - finance manager screens
+- `src/main/IM_*` - inventory manager screens
+- `src/main/PM_*` - purchase manager screens
+- `src/main/SM_*` - sales manager screens
+- `src/main/User.java`, `Item.java`, `Supplier.java`, `PO.java`, `PR.java`, `Sales.java` - core data classes
+- `users.txt`, `items.txt`, `POs.txt`, `PRs.txt`, `sales.txt`, `suppliers.txt`, `SPs.txt` - persisted records
 
-## Run
+## How to Run
 
 1. Open the project in NetBeans or another Java IDE with Ant support.
 2. Build the project using `build.xml`.
-3. Run the main desktop application entry configured by the project.
+3. Run `src/main/Assignment.java`, which opens the login window and applies the Nimbus look and feel when available.
